@@ -4,7 +4,7 @@ import api from '../../services/api';
 import logo from '../../assets/logo.svg';
 
 
-const Index = _ => {
+const Index = ({ history }) => {
 
     const [email, setEmail] = useState('');
 
@@ -16,6 +16,8 @@ const Index = _ => {
         const { _id } = resp.data;
 
         localStorage.setItem('user', _id);
+
+        history.push('/dashboard');
     }
 
     return (
